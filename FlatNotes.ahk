@@ -12,6 +12,7 @@ DetectHiddenWindows, On
 Menu, Tray, NoStandard
 Menu, Tray, Add 
 Menu, Tray, Add, Library
+Menu, Tray, Click, 1
 Menu, Tray, Add, Note Template Maker,NoteTemplateMaker
 Menu, Tray, Add, About
 Menu, Tray, Add, Options
