@@ -199,8 +199,6 @@ BuildGUI1(){
 	Gui, 1:add, text, center backgroundTrans w15 h15 x%HelpIconx% y6 -E0x200 c%U_FBCA% gHelpWindow, [?]
 	
 	
-		
-	
 
 	if (HideScrollbars = 1) {
 		LVM_ShowScrollBar(HPB,1,False)

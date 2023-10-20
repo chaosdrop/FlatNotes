@@ -669,7 +669,6 @@ UnDoom:
 return
 
 
-
 NoteListView:
 Critical
 ;z := ":" A_GuiEvent ":" errorlevel ":";A_EventInfo ":" LV@sel_col "`n"
@@ -2977,7 +2976,7 @@ Return
 
 
 HelpWindow:
-msgbox % "Advanced search: `nn;;	term = Search names only.[Also works for b:: t:: and p:: for body, tags, and parent]`ntermA||termB = find a or b.`n`n[Legend: + = Shift, ^ = Ctrl, ! = Alt, # = Win]`n`nGLOBAL HOTKEYS:`nOpen Library (if Capslock not used): " savedHK1 "`nQuick Note: " savedHK2 "`nQuick Note Alt: " savedHK3 "`nRapid Note: " savedHK4 "`nCancel Rapid Note: " savedHK5 "`nAppend to Rapid Note: " savedHK6 "`nAppend Template to Rapid Note" savedHK7 "`n`nMAIN WINDOW SHORTCUTS:`nFocus Search: "savedSK1 "`nFocus Results: " savedSK2 "`nFocus Edit/Preview: " savedSK3 "`nAdd Note From Template: " savedSK4 "`n`nINFO:`nQuick Note:`nSelect text and press the Quick Note hotkey to bring that text up as the body of a new blank note.`n`nRapid Note:`nUse the Rapid Note hotkey to quick add notes. Press the Rapid Note Hotkey once to copy the title, then again to copy the body or use the append hotkey to add any number of selected texts to the body of the note. When you are done use the Rapid Note hotekey to finish the note and select a star."
+msgbox % "Advanced search: `n Term;;n = Search names only.[Also works for Term;;b, term;;t, and term;;p for body, tags, and parent]`n`n[Legend: + = Shift, ^ = Ctrl, ! = Alt, # = Win]`n`nGLOBAL HOTKEYS:`nOpen Library (if Capslock not used): " savedHK1 "`nQuick Note: " savedHK2 "`nQuick Note Alt: " savedHK3 "`nRapid Note: " savedHK4 "`nCancel Rapid Note: " savedHK5 "`nAppend to Rapid Note: " savedHK6 "`nAppend Template to Rapid Note" savedHK7 "`n`nMAIN WINDOW SHORTCUTS:`nFocus Search: "savedSK1 "`nFocus Results: " savedSK2 "`nFocus Edit/Preview: " savedSK3 "`nAdd Note From Template: " savedSK4 "`n`nINFO:`nQuick Note:`nSelect text and press the Quick Note hotkey to bring that text up as the body of a new blank note.`n`nRapid Note:`nUse the Rapid Note hotkey to quick add notes. Press the Rapid Note Hotkey once to copy the title, then again to copy the body or use the append hotkey to add any number of selected texts to the body of the note. When you are done use the Rapid Note hotekey to finish the note and select a star."
 return
 
 
