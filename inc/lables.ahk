@@ -187,6 +187,12 @@ NewFromSearch:
 		}
 			return
 		}
+		if (NewNoteFromSearch == ""){
+		return
+		}
+		if (TmpFileSafeName == ""){
+		return	
+		}
 		SaveFile(NewNoteFromSearch,TmpFileSafeName,"","","",CatFilter,"")
 		
 		
@@ -1288,18 +1294,14 @@ ChangeCount := SelectedRowsArray.Length()
 SelectedRowsArray:=ObjectSort(SelectedRowsArray,,,false)
 	;v = row numbers
 	for RowKey, CRowNum in SelectedRowsArray{
-		LV_GetText(tmpName,CRowNum,8)
-		
-		tmpName := strreplace(tmpName,".txt",".ini")
-		Iniread, tmpName,%detailsPath%%tmpName%, INFO,Name
-		tmpname := strreplace(tmpName,"$#$")
-		C_SafeName := NameEncode(tmpName)
+		LV_GetText(tmpName,CRowNum,2)
+		C_SafeName := NameEncode(tmpName)		
 		if (CRowNum !=3)
 			GetFile = false ;don't get the body
 		GetCurrentNoteData(C_SafeName)
 		;Error Check
 		if !FileExist( U_NotePath C_SafeName ".txt"){
-			Msgbox % "Error Report Code FNF#001 Details: `n" U_NotePath C_SafeName ".txt"
+			Msgbox % "Error Report Code FNF#001 Details: `n" U_NotePath C_SafeName ".txt" " SelectedRows:" SelectedRows " Name: " tmpName " RowNum:" CRowNum
 			
 			break
 		}
@@ -2975,7 +2977,7 @@ Return
 
 
 HelpWindow:
-msgbox % "Advanced search: `nn::term = Search names only.[Also works for b:: t:: and p:: for body, tags, and parent]`ntermA||termB = find a or b.`nTermA&&TermB = find a and b`nNote: for || and && terms most be in the same field. eg. You can't search for terms in title and body, they most both be in that title or body.`n`n[Legend: + = Shift, ^ = Ctrl, ! = Alt, # = Win]`n`nGLOBAL HOTKEYS:`nOpen Library (if Capslock not used): " savedHK1 "`nQuick Note: " savedHK2 "`nQuick Note Alt: " savedHK3 "`nRapid Note: " savedHK4 "`nCancel Rapid Note: " savedHK5 "`nAppend to Rapid Note: " savedHK6 "`nAppend Template to Rapid Note" savedHK7 "`n`nMAIN WINDOW SHORTCUTS:`nFocus Search: "savedSK1 "`nFocus Results: " savedSK2 "`nFocus Edit/Preview: " savedSK3 "`nAdd Note From Template: " savedSK4 "`n`nINFO:`nQuick Note:`nSelect text and press the Quick Note hotkey to bring that text up as the body of a new blank note.`n`nRapid Note:`nUse the Rapid Note hotkey to quick add notes. Press the Rapid Note Hotkey once to copy the title, then again to copy the body or use the append hotkey to add any number of selected texts to the body of the note. When you are done use the Rapid Note hotekey to finish the note and select a star."
+msgbox % "Advanced search: `nn;;	term = Search names only.[Also works for b:: t:: and p:: for body, tags, and parent]`ntermA||termB = find a or b.`n`n[Legend: + = Shift, ^ = Ctrl, ! = Alt, # = Win]`n`nGLOBAL HOTKEYS:`nOpen Library (if Capslock not used): " savedHK1 "`nQuick Note: " savedHK2 "`nQuick Note Alt: " savedHK3 "`nRapid Note: " savedHK4 "`nCancel Rapid Note: " savedHK5 "`nAppend to Rapid Note: " savedHK6 "`nAppend Template to Rapid Note" savedHK7 "`n`nMAIN WINDOW SHORTCUTS:`nFocus Search: "savedSK1 "`nFocus Results: " savedSK2 "`nFocus Edit/Preview: " savedSK3 "`nAdd Note From Template: " savedSK4 "`n`nINFO:`nQuick Note:`nSelect text and press the Quick Note hotkey to bring that text up as the body of a new blank note.`n`nRapid Note:`nUse the Rapid Note hotkey to quick add notes. Press the Rapid Note Hotkey once to copy the title, then again to copy the body or use the append hotkey to add any number of selected texts to the body of the note. When you are done use the Rapid Note hotekey to finish the note and select a star."
 return
 
 
